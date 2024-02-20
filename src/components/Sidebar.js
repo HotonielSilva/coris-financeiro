@@ -19,8 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Footer from './Footer'
 import DescriptionIcon from '@mui/icons-material/Description';
 import HomeIcon from '@mui/icons-material/Home';
-
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Home from '../pages/Home'
 import NotasFiscais from '../pages/NotasFiscais'
 import Agentes from '../pages/Agentes'
@@ -147,7 +146,6 @@ export default function SideBar() {
             </Toolbar>
           </AppBar>
 
-
           <Drawer variant="permanent" open={open}>
             <DrawerHeader>
               <IconButton onClick={handleDrawerClose}>
@@ -160,6 +158,7 @@ export default function SideBar() {
                 key={"Home"}
                 disablePadding
                 sx={{ display: 'block' }}
+                component={Link} to="/"
               >
                 <ListItemButton
                   sx={{
@@ -167,6 +166,7 @@ export default function SideBar() {
                     justifyContent: open ? 'initial' : 'center',
                     px: 2.5,
                   }}
+
                 >
                   <ListItemIcon
                     sx={{
@@ -187,6 +187,7 @@ export default function SideBar() {
                 key={"Notas Fiscais"}
                 disablePadding
                 sx={{ display: 'block' }}
+                component={Link} to="/NotasFiscais"
               >
                 <ListItemButton
                   sx={{
@@ -194,6 +195,7 @@ export default function SideBar() {
                     justifyContent: open ? 'initial' : 'center',
                     px: 2.5,
                   }}
+                  
                 >
                   <ListItemIcon
                     sx={{
@@ -205,6 +207,7 @@ export default function SideBar() {
                     <DescriptionIcon />
                   </ListItemIcon>
                   <ListItemText primary="Notas Fiscais" sx={{ opacity: open ? 1 : 0 }} />
+                  
                 </ListItemButton>
               </ListItem>
             </List>
@@ -220,8 +223,6 @@ export default function SideBar() {
               <Route path="/NotasFiscais" exact element={<NotasFiscais />} />
             </Routes>
           </Box>
-
-
         </Box>
         <Footer />
       </BrowserRouter >
