@@ -1,10 +1,8 @@
-function Agentes () {
-    return(
+
+export default function Agentes() {
+    return (
         <>
-        <h1>Agentes</h1>
-        <p>conteudo</p>
+            <h1>Agentes</h1>
         </>
     )
 }
-
-export default Agentes

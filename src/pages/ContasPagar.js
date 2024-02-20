@@ -1,9 +1,8 @@
-function ContasPagar () {
-    return(
+
+export default function ContasPagar() {
+    return (
         <>
-        <h1>Contas Pagar</h1>
+            <h1>Contas Pagar</h1>
         </>
     )
 }
-
-export default ContasPagar
